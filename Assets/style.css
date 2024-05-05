@@ -1,0 +1,234 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto:wght@500&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-text-color: #183b56;
+    --secondary-text-color: #577592;
+    --accent-color: #2294ed;
+    --accent-color-dark: #1d69a3;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    color: var(--primary-text-color);
+}
+
+p {
+    font-family: "Roboto", sans-serif;
+    color: var(--secondary-text-color);
+    line-height: 1.4rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    max-width: 1180px;
+    margin-inline: auto;
+    overflow: hidden;
+}
+
+nav {
+    background-color: #f3faff;
+    box-shadow: 0 0 4px #bbd0e2;
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    left: 0;
+    right: 0;
+}
+
+.main-nav {
+    justify-content: space-between;
+    padding-block: 8px;
+}
+
+.company-logo img {
+    width: 70px;
+}
+
+.nav-links ul {
+    gap: 16px;
+}
+
+.hover-link {
+    cursor: pointer;
+}
+
+.hover-link:hover {
+    color: var(--secondary-text-color);
+}
+
+.hover-link:active {
+    color: red;
+}
+
+.nav-item.active {
+    color: var(--accent-color);
+}
+
+.search-bar {
+    height: 32px;
+    gap: 8px;
+}
+
+.news-input {
+    width: 200px;
+    height: 100%;
+    padding-inline: 12px;
+    border-radius: 4px;
+    border: 2px solid #bbd0e2;
+    font-family: "Roboto", sans-serif;
+}
+
+.search-button {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 8px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: "Roboto", sans-serif;
+}
+
+.search-button:hover {
+    background-color: var(--accent-color-dark);
+}
+
+main {
+    padding-block: 20px;
+    margin-top: 80px;
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.card {
+    flex: 1 1 300px; /* Allow cards to grow and shrink */
+    max-width: 400px; /* Set maximum width for cards */
+    min-height: 400px;
+    box-shadow: 0 0 4px #d4ecff;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #fff;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 1px 1px 8px #d4ecff;
+    background-color: #f9fdff;
+    transform: translateY(-2px);
+}
+
+.card-header img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 12px;
+}
+
+.news-source {
+    margin-block: 12px;
+}
+
+/* Media Queries for Responsive Design */
+
+/* For screens smaller than 768px (e.g., phones) */
+@media (max-width: 768px) {
+    .container {
+        padding-inline: 10px; /* Adjust padding for smaller screens */
+    }
+    
+    .company-logo img {
+        width: 50px; /* Adjust company logo size for smaller screens */
+    }
+
+    .nav-links ul {
+        flex-direction: column; /* Stack navigation links vertically */
+        align-items: center; /* Center-align navigation links */
+    }
+
+    .search-bar {
+        flex-direction: column; /* Stack search bar items vertically */
+        align-items: center; /* Center-align search bar items */
+    }
+
+    .news-input {
+        width: 80%; /* Adjust news input width for smaller screens */
+    }
+
+    .search-button {
+        width: 80%; /* Adjust search button width for smaller screens */
+    }
+
+    .cards-container {
+        justify-content: center; /* Center-align card containers */
+    }
+
+    .card {
+        flex-basis: 90%; /* Adjust card width for smaller screens */
+        max-width: none; /* Reset maximum width for cards */
+    }
+}
+
+/* For screens larger than 1200px (e.g., laptops) */
+@media (min-width: 1200px) {
+    .container {
+        padding-inline: 20px; /* Adjust padding for larger screens */
+    }
+
+    .company-logo img {
+        width: 80px; /* Adjust company logo size for larger screens */
+    }
+
+    .nav-links ul {
+        flex-direction: row; /* Reset navigation links direction */
+        align-items: center; /* Reset alignment of navigation links */
+    }
+
+    .search-bar {
+        flex-direction: row; /* Reset search bar direction */
+        align-items: center; /* Reset alignment of search bar items */
+    }
+
+    .news-input {
+        width: 200px; /* Reset news input width for larger screens */
+    }
+
+    .search-button {
+        width: auto; /* Reset search button width for larger screens */
+    }
+
+    .cards-container {
+        justify-content: space-between; /* Reset card containers alignment */
+    }
+
+    .card {
+        flex-basis: auto; /* Reset card width for larger screens */
+        max-width: 360px; /* Set maximum width for cards */
+    }
+}
